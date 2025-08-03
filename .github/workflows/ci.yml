@@ -1,0 +1,23 @@
+name: Selenoid Tests Workflow
+# Перечень событий-триггеров, при которых должен запускаться workflow
+on:
+  # Событие push возникает,
+  # когда изменения исходного кода приходят на сервер GitHub
+  push:
+    # Отслеживаем изменения только в ветке master
+    branches:
+      - develop
+# Перечень задач
+jobs:
+  checkout-and-run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Pull selenoid chrome image
+        run: docker pull selenoid/chrome:114.0
+
+
+      - name: Run tests in docker
+        run: docker compose up --build --exit-code-from test_docker

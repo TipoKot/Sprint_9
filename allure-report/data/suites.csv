@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1739","Авторизация с созданным аккаунтом","tests","Sun Aug 03 15:16:14 EEST 2025","passed","Sun Aug 03 15:16:16 EEST 2025","TestAccount","test_account","",""
+"","1918","Создание аккаунта","tests","Sun Aug 03 15:16:11 EEST 2025","passed","Sun Aug 03 15:16:13 EEST 2025","TestAccount","test_account","",""
+"","4111","Создание рецепта зарегистрированным пользователем","tests","Sun Aug 03 15:16:16 EEST 2025","passed","Sun Aug 03 15:16:20 EEST 2025","TestAccount","test_recipes","",""

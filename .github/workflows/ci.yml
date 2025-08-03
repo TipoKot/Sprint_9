@@ -15,5 +15,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
+      - name: Pull selenoid chrome image
+        run: docker pull selenoid/chrome:114.0
+
+
       - name: Run tests in docker
         run: docker compose up --build --exit-code-from test_docker

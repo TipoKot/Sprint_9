@@ -11,5 +11,5 @@ test_recipe = {
     "ingredient_weight": "200",
     "cooking_time": "30",
     "description": "This is a test recipe for automation testing.",
-    "image_path": "/Users/aakuzmh/dev/practicum/Sprint_9/test_data/test_image.png"
+    "image_path": "/app/test_data/test_image.png"
 }

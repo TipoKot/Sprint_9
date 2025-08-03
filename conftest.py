@@ -6,9 +6,15 @@ from selenium.webdriver.chrome.options import Options
 def driver():
     chrome_options = Options()
     chrome_options.browser_version = "114.0"
+
+    # Стандартные W3C-capabilities
     chrome_options.set_capability("browserName", "chrome")
-    chrome_options.set_capability("enableVNC", True)  # если надо видеть браузер в UI
-    # chrome_options.set_capability("enableVideo", True)  # если хочешь видео
+
+    # Selenoid-specific capabilities
+    chrome_options.set_capability("selenoid:options", {
+        "enableVNC": True,
+        # "enableVideo": True,  # если нужно
+    })
 
     driver = webdriver.Remote(
         command_executor="http://selenoid:4444/wd/hub",

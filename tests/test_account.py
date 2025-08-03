@@ -2,9 +2,10 @@ from pages.signin_page import SignIn
 from pages.signup_page import SignUp
 from pages.recipes_page import Recipes
 from data import BASE_URL, test_user
-import random
+import random, allure
 
 class TestAccount:
+    @allure.title("Создание аккаунта")
     def test_create_account(self, driver):
         signin_page = SignIn(driver)
         signin_page.open()
@@ -25,6 +26,7 @@ class TestAccount:
         assert f"{BASE_URL}/signin" in signin_page.get_current_url(), "Не удалось перейти на страницу входа после создания аккаунта"
         assert signin_page.is_signin_form_displayed(), "Форма входа не отображается после создания аккаунта"
     
+    @allure.title("Авторизация с созданным аккаунтом")
     def test_login(self, driver):
         signin_page = SignIn(driver)
         signin_page.open()

@@ -2,9 +2,10 @@ from pages.signin_page import SignIn
 from pages.recipes_page import Recipes
 from pages.recipes_create_page import RecipesCreate
 from data import BASE_URL, test_user, test_recipe
-import random
+import random, allure
 
 class TestAccount:
+    @allure.title("Создание рецепта зарегистрированным пользователем")
     def test_create_recipe(self, driver):
         signin_page = SignIn(driver)
         signin_page.open()
